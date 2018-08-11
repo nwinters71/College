@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<!-- saved from url=(0056)http://nelsonwinters.pythonanywhere.com/static/view.html -->
+<html lang="en" class=" js flexbox canvas canvastext webgl touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface no-generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  
+  <link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico">
+  <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111">
+  <script src="./view_files/jquery-3.3.1.min.js.download" language="JavaScript" type="text/javascript"></script>
+
+
+<script>
+$(document).ready(function() {
+  $("#tblDatatr:has(.jump)").mouseover(function(e) {
+  $(this).css("cursor", "pointer");
+});
+$("#tblDatatr:has(td)").click(function(e) {
+  $("#tblData td").removeClass("highlight");
+  var clickedCell= $(e.target).closest("td");
+  clickedCell.addClass("highlight");
+  $("#spnText").html(
+    'Clicked table cell value is: <b> ' + clickedCell.text() + '</b>');
+  });
+});
+</script>
+
+  <title>CodePen - Rotated Table Headers</title>
+  
+<style>
+table {
+ font-family: arial, sans-serif;
+ border-collapse: collapse;
+ }
+td,
+tr:nth-child(even) {
+ background-color: white;
+}
+tr:nth-child(odd) {
+ //background-color: #ddeedd;
+}
+.highlight {
+ background-color: Yellow;
+ color: Green;
+}
+
+
+
+.table-header-rotated {
+  border-collapse: collapse;
+}
+.csstransforms .table-header-rotated td {
+  width: 30px;
+}
+.no-csstransforms .table-header-rotated th {
+  padding: 5px 10px;
+}
+.table-header-rotated td {
+  text-align: center;
+  padding: 2px 2px;
+  border: 1px solid #ccc;
+  font-family: calibri;
+  //font-size:11px;
+}
+.csstransforms .table-header-rotated th.rotate {
+  height: 140px;
+  white-space: nowrap;
+  font-family: courier new;  
+  font-weight: bold;
+}
+.csstransforms .table-header-rotated th.rotate > div {
+  -webkit-transform: translate(25px, 51px) rotate(315deg);
+          transform: translate(23px, 53px) rotate(315deg);
+  width: 30px;  
+}
+.csstransforms .table-header-rotated th.rotate > div > span {
+  display: block;
+  text-align: left;
+  border-bottom: 1px solid #ccc;  
+  width: 250px;
+  padding: 2px 8px;
+  background-color: #ffffff;
+}
+.table-header-rotated td.row-header {
+  padding: 0 12px;
+  border-bottom: 1px solid #ccc;
+  font-family: calibri;  
+  font-weight: bold;
+  white-space: nowrap;
+  text-align: left;
+}
+.table-header-rotated td.section-header {
+  padding: 0 6px;
+  border-bottom: 1px solid #ccc;
+  font-family: calibri;
+  font-weight: bold;
+  white-space: nowrap;
+  text-align: left;
+  background-color: #ccc
+}
+
+    </style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+
+</head>
+
+<body translate="no">
+<br><br>
+  <table class="table table-header-rotated">
+  <thead>
+    <tr>
+      <!-- First column header is not rotated -->
+	  <!-- th class="rotate"><div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div></th-->
+	  <th></th>
+      <!-- Following headers are rotated -->
+		<th class="rotate"><div><span>Harvard University</span></div></th>
+		<th class="rotate"><div><span>Yale University</span></div></th>
+		<th class="rotate"><div><span>Princeton University</span></div></th>        
+		<th class="rotate"><div><span>Stanford University</span></div></th>
+    <th class="rotate"><div><span>MIT</span></div></th>
+    <th class="rotate"><div><span>CalTech</span></div></th>		
+    </tr> 
+  </thead>
+  <tbody>
+    <tr>
+      <td class="row-header">US News &amp; World Report</td>
+      <td onclick="window.open(&#39;https://www.usnews.com/best-colleges/harvard-university-2155&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" class="jump">2</td>
+      <td onclick="window.open(&#39;https://www.usnews.com/best-colleges/yale-university-1426&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" class="jump">3</td>
+      <td onclick="window.open(&#39;https://www.usnews.com/best-colleges/princeton-university-2627&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" class="jump">1</td>
+      <td onclick="window.open(&#39;https://www.usnews.com/best-colleges/stanford-1305&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" class="jump" style="background-color: white; cursor: pointer;">10</td>
+      <td onclick="window.open(&#39;https://www.usnews.com/best-colleges/mit-2178&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" class="jump">5</td>
+      <td onclick="window.open(&#39;https://www.usnews.com/best-colleges/cal-tech-1131&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" class="jump">5</td>
+    </tr>
+    <tr>
+      <td class="row-header">Forbes</td>
+      <td onclick="window.open(&#39;https://www.forbes.com/colleges/harvard-university/&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" class="jump">1</td>
+      <td onclick="window.open(&#39;https://www.forbes.com/colleges/yale-university/&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" class="jump">3</td>
+      <td onclick="window.open(&#39;https://www.forbes.com/colleges/princeton-university/&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" class="jump">4</td>
+      <td onclick="window.open(&#39;https://www.forbes.com/colleges/stanford-university/&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" class="jump" style="background-color: white; cursor: pointer;">6</td>
+      <td onclick="window.open(&#39;https://www.forbes.com/colleges/massachusetts-institute-of-technology/&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" class="jump" style="background-color: white; cursor: pointer;">5</td>
+      <td onclick="window.open(&#39;https://www.forbes.com/colleges/california-institute-of-technology/&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" class="jump" style="background-color: white; cursor: pointer;">2</td>
+    </tr>
+    <tr>
+      <td class="row-header">Niche</td>
+      <td onclick="window.open(&#39;https://www.niche.com/colleges/harvard-university&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" class="jump">3</td>
+      <td onclick="window.open(&#39;https://www.niche.com/colleges/yale-university&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" class="jump">4</td>
+      <td onclick="window.open(&#39;https://www.niche.com/colleges/princeton-university&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" class="jump" style="background-color: white; cursor: pointer;">6</td>
+      <td onclick="window.open(&#39;https://www.niche.com/colleges/stanford-university&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" class="jump" style="background-color: white; cursor: pointer;">6</td>
+      <td onclick="window.open(&#39;https://www.niche.com/colleges/massachusetts-institute-of-technology&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" class="jump" style="background-color: white; cursor: pointer;">10</td>
+      <td onclick="window.open(&#39;https://www.usnews.com/best-colleges/cal-tech-1131&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" class="jump" style="background-color: white; cursor: pointer;">2</td>
+    </tr>
+  	<tr>
+      <td class="section-header" colspan="7" style="background-color:#00B9F4">INFORMATION SITES</td>
+    </tr>
+    <tr>
+      <td class="row-header">Cappex</td>
+      <td onclick="window.open(&#39;https://www.cappex.com/colleges/Harvard-College&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;https://www.cappex.com/colleges/yale-university&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;"></td>
+      <td onclick="window.open(&#39;https://www.cappex.com/colleges/princeton-university&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;https://www.cappex.com/colleges/stanford-university&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;https://www.cappex.com/colleges/Massachusetts-Institute-of-Technology&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;https://www.cappex.com/colleges/California-Institute-of-Technology/reviews&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;"></td>
+    </tr>
+    <tr>
+      <td class="row-header">Unigo</td>
+      <td onclick="window.open(&#39;https://www.unigo.com/colleges/harvard-university&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;https://www.unigo.com/colleges/yale-university&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;https://www.unigo.com/colleges/princeton-university&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;https://www.unigo.com/colleges/stanford-university&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;https://www.unigo.com/colleges/massachusetts-institute-of-technology&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;https://www.unigo.com/colleges/california-institute-of-technology&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;"></td>
+    </tr>
+    <tr>
+      <td class="row-header">Chegg</td>
+      <td onclick="window.open(&#39;https://www.chegg.com/schools/harvard-university&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;https://www.chegg.com/schools/yaleuniversity&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;https://www.chegg.com/schools/princeton-university&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;https://www.chegg.com/schools/stanford-university&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;https://www.chegg.com/schools/massachusetts-institute-technology&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;https://www.chegg.com/schools/california-institute-technology-caltech&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+    </tr>
+    <tr>
+      <td class="row-header">College Data</td>
+      <td onclick="window.open(&#39;https://www.collegedata.com/cs/data/college/college_pg03_tmpl.jhtml?schoolId=444&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;https://www.collegedata.com/cs/data/college/college_pg01_tmpl.jhtml?schoolId=244&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;https://www.collegedata.com/cs/data/college/college_pg01_tmpl.jhtml?schoolId=111&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;https://www.collegedata.com/cs/data/college/college_pg01_tmpl.jhtml?schoolId=781&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;https://www.collegedata.com/cs/data/college/college_pg01_tmpl.jhtml?schoolId=186&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;https://www.collegedata.com/cs/data/college/college_pg01_tmpl.jhtml?schoolId=706&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+    </tr>
+    <tr>
+      <td class="row-header">College Simply</td>
+      <td onclick="window.open(&#39;http://www.collegesimply.com/colleges/massachusetts/harvard-university/&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;http://www.collegesimply.com/colleges/connecticut/yale-university/admission/&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;"></td>
+      <td onclick="window.open(&#39;http://www.collegesimply.com/colleges/new-jersey/princeton-university/&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;http://www.collegesimply.com/colleges/california/stanford-university/&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;http://www.collegesimply.com/colleges/massachusetts/massachusetts-institute-of-technology/&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;http://www.collegesimply.com/colleges/california/california-institute-of-technology/&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+    </tr>
+  	<tr>
+      <td class="section-header" colspan="7" style="background-color:#00B9F4">DISCUSSION SITES</td>
+    </tr>
+    <tr>
+      <td class="row-header">College Confidential</td>
+      <td onclick="window.open(&#39;https://talk.collegeconfidential.com/harvard-university/&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;https://talk.collegeconfidential.com/yale-university/&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;https://talk.collegeconfidential.com/princeton-university/&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;https://talk.collegeconfidential.com/stanford-university/&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;https://talk.collegeconfidential.com/massachusetts-institute-technology/&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;"></td>
+      <td onclick="window.open(&#39;https://talk.collegeconfidential.com/california-institute-of-technology&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+    </tr>
+    <tr>
+      <td class="row-header">Reddit</td>
+      <td onclick="window.open(&#39;https://www.reddit.com/r/Harvard/&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;"></td>
+      <td onclick="window.open(&#39;https://www.reddit.com/r/yale/&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;https://www.reddit.com/r/princeton/&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;https://www.reddit.com/r/stanford/&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;https://www.reddit.com/r/mit/&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;"></td>
+      <td onclick="window.open(&#39;https://www.reddit.com/r/Caltech/&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+    </tr>
+  	<tr>
+      <td class="section-header" colspan="7" style="background-color:#00B9F4">SOCIAL MEDIA</td>
+    </tr>
+    <tr>
+      <td class="row-header">Facebook</td>
+      <td onclick="window.open(&#39;https://www.facebook.com/Harvard/&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;https://www.facebook.com/YaleUniversity/&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;https://www.facebook.com/PrincetonU/&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;https://www.facebook.com/stanford/&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;https://www.facebook.com/MITnews/&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;"></td>
+      <td onclick="window.open(&#39;http://www.facebook.com/californiainstituteoftechnology&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+    </tr>
+    <tr>
+      <td class="row-header">LinkedIn</td>
+      <td onclick="window.open(https://www.linkedin.com/school/harvard-university/&#39;&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;https://www.linkedin.com/school/yale-university/&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;"></td>
+      <td onclick="window.open(&#39;https://www.linkedin.com/school/princeton-university/&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;https://www.linkedin.com/school/stanford-university/&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;https://www.linkedin.com/school/mit/&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;"></td>
+      <td onclick="window.open(&#39;https://www.linkedin.com/school/california-institute-of-technology/&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+    </tr>
+    <tr>
+      <td class="row-header">Twitter</td>
+      <td onclick="window.open(&#39;https://twitter.com/Harvard?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;https://twitter.com/Yale&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;https://twitter.com/Princeton&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;https://twitter.com/Stanford&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;https://twitter.com/MIT&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;http://www.twitter.com/caltech&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+    </tr>
+    <tr>
+      <td class="row-header">YouTube</td>
+      <td onclick="window.open(&#39;https://www.youtube.com/user/Harvard/videos&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;https://www.youtube.com/user/YaleUniversity&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;https://www.youtube.com/user/princetonuniversity&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;https://www.youtube.com/channel/UC-EnprmCZ3OXyAoG7vjVNCA&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;https://www.youtube.com/mit&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;http://www.youtube.com/user/caltech&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+    </tr>
+    <tr>
+      <td class="row-header">Instagram</td>
+      <td onclick="window.open(&#39;https://www.instagram.com/harvard/&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;https://www.instagram.com/yale/&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;https://www.instagram.com/princeton_university/&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;http://www.instagram.com/stanford&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;https://www.instagram.com/mitpics/&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;http://www.instagram.com/caltechedu&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+    </tr>
+  	<tr>
+      <td class="section-header" colspan="7" style="background-color:#00B9F4">COLLEGE INFORMATION</td>
+    </tr>
+    <tr>
+      <td class="row-header">Website</td>
+      <td onclick="window.open(&#39;https://www.harvard.edu/&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;https://www.yale.edu/&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;https://www.princeton.edu/&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;"></td>
+      <td onclick="window.open(&#39;https://www.stanford.edu/&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;http://www.mit.edu/&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;http://www.caltech.edu&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+    </tr>
+    <tr>
+      <td class="row-header">News</td>
+      <td onclick="window.open(&#39;https://news.harvard.edu/gazette/&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;https://news.yale.edu/&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;"></td>
+      <td onclick="window.open(&#39;https://www.princeton.edu/news&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;"></td>
+      <td onclick="window.open(&#39;https://news.stanford.edu/&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;http://news.mit.edu/&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;http://www.caltech.edu/today&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+    </tr>
+    <tr>
+      <td class="row-header">Wikipedia</td>
+      <td onclick="window.open(&#39;https://en.wikipedia.org/wiki/Harvard_University&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;https://en.wikipedia.org/wiki/Yale_University&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;https://en.wikipedia.org/wiki/Princeton_University&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;https://en.wikipedia.org/wiki/Stanford_University&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;https://en.wikipedia.org/wiki/Massachusetts_Institute_of_Technology&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;https://en.wikipedia.org/wiki/California_Institute_of_Technology&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;"></td>
+    </tr>
+    <tr>
+      <td class="row-header">Virtual Tour</td>
+      <td onclick="window.open(&#39;https://college.harvard.edu/admissions/visit/virtual-tour&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;https://admissions.yale.edu/virtual-tour&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;https://www.youvisit.com/tour/princeton&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;https://visit.stanford.edu/tours/virtual/&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;http://web.mit.edu/vrtour/&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;"></td>
+      <td onclick="window.open(&#39;http://www.admissions.caltech.edu/videotour&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+    </tr>
+    <tr>
+      <td class="row-header">Campus Map</td>
+      <td onclick="window.open(&#39;https://map.harvard.edu/&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;https://map.yale.edu/&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;http://m.princeton.edu/map/campus&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;https://campus-map.stanford.edu/&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+      <td onclick="window.open(&#39;https://whereis.mit.edu/&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;"></td>
+      <td onclick="window.open(&#39;http://www.caltech.edu/content/campus-maps&#39;)" onmouseover="this.style.backgroundColor=&#39;yellow&#39;" onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;" style="background-color: white; cursor: pointer;"></td>
+    </tr>
+  </tbody>
+</table>
+  
+  <script src="./view_files/modernizr-2.7.1.js.download"></script>
+
+  
+  
+  
+
+
+
+
+</body></html>
