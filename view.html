@@ -35,6 +35,13 @@ $(document).ready(function() {
       $('#usnwrList').attr("baseurl", $(this).attr("value"));
       selectCell($(this));
   });
+
+  $('.niche').on("click", function() {
+      //alert($(this).attr("value"));
+      $('#nicheList').attr("baseurl", $(this).attr("value"));
+      selectCell($(this));
+  });
+
   
   $('.jump').on("mouseover", function() {
       this.style.backgroundColor='magenta';
@@ -72,8 +79,8 @@ $(document).ready(function() {
         });
       }); */
 
-      obj.find('.list li').click(function() { //onclick event, change field value with selected 'list' item and fadeout 'list'
-        window.open($('#usnwrList').attr("baseurl") + $(this).attr("value"));        
+    obj.find('.list li').click(function() { //onclick event, change field value with selected 'list' item and fadeout 'list'
+      window.open($(this).parent().parent().attr("baseurl") + $(this).attr("value"));        
 /*
         obj.find('.field')
           .val($(this).html())
@@ -83,7 +90,7 @@ $(document).ready(function() {
           });
         obj.find('.list').fadeOut(00);
 */
-      });
+    });
     });
   };
 })(jQuery);
@@ -107,7 +114,10 @@ function selectCell(TD) {
 			// $(".tdSiteSelected").html("#usnwrList");
       // alert("Pos: " + TD.position().left);
       thisPos = TD.position();
-      obj = $("#usnwrList");
+      if(TD.hasClass("usnwr"))
+        obj = $("#usnwrList");
+      if(TD.hasClass("niche"))
+        obj = $("#nicheList");      
       obj.css("left", thisPos.left);
       obj.css("top", thisPos.top);
       obj.find('.list').fadeIn(00);
@@ -124,7 +134,9 @@ function selectCell(TD) {
       });
 
       
-//      window.open(obj.attr("value") + $(this).attr("value"));
+      // window.open(obj.attr("baseurl") + $(this).attr("value"));
+      // window.open($('#usnwrList').attr("baseurl") + $(this).attr("value"));
+      // window.open(obj.attr("value") + $(this).attr("value"));
 
       
 			$("#usnwrList").show();
@@ -282,6 +294,27 @@ tr:nth-child(odd) {
   </ul>
 </div>
   
+  
+<div id="nicheList" class="size" baseurl="">
+  <ul class="list">
+    <li value="/#report-card">Report Card</li>
+    <li value="/#about">About</li>
+    <li value="/rankings/">Rankings</li>
+    <li value="/admissions/">Admissions</li>
+    <li value="/#scatterplot">Will You Get In?</li>
+    <li value="/cost/">Cost</li>
+    <li value="/academics/">Academics</li>
+    <li value="/majors/">Majors</li>
+    <li value="/students/">Students</li>
+    <li value="/campus-life/">Campus Life</li>
+    <li value="/after-college">After College</li>
+    <li value="/#similar-colleges">Similar Colleges</li>
+    <li value="/reviews/">Reviews</li>
+  </ul>
+</div>
+  
+  
+  
   <br><br>
   <table class="table table-header-rotated">
   <thead>
@@ -308,6 +341,15 @@ tr:nth-child(odd) {
       <td class="usnwr jump size" value="https://www.usnews.com/best-colleges/mit-2178">5</td>
       <td class="usnwr jump size" value="https://www.usnews.com/best-colleges/cal-tech-1131">5</td>
     </tr>
+    <tr>
+      <td class="row-header">Niche</td>
+      <td class="niche jump size" value="https://www.niche.com/colleges/harvard-university">3</td>
+      <td class="niche jump size" value="https://www.niche.com/colleges/yale-university">4</td>
+      <td class="niche jump size" value="https://www.niche.com/colleges/princeton-university">6</td>
+      <td class="niche jump size" value="https://www.niche.com/colleges/stanford-university">6</td>
+      <td class="niche jump size" value="https://www.niche.com/colleges/massachusetts-institute-of-technology">10</td>
+      <td class="niche jump size" value="https://www.niche.com/colleges/california-institute-of-technology">2</td>
+    </tr>
     <!-- tr>
       <td class="row-header">US News &amp; World Report</td>
       <td onclick="window.open(&#39;https://www.usnews.com/best-colleges/harvard-university-2155&#39;)" class="jump">2</td>
@@ -325,7 +367,7 @@ tr:nth-child(odd) {
       <td onclick="window.open(&#39;https://www.forbes.com/colleges/stanford-university/&#39;)" class="jump">6</td>
       <td onclick="window.open(&#39;https://www.forbes.com/colleges/massachusetts-institute-of-technology/&#39;)" class="jump">5</td>
       <td onclick="window.open(&#39;https://www.forbes.com/colleges/california-institute-of-technology/&#39;)" class="jump">2</td>
-    </tr -->
+    </tr>
     <tr>
       <td class="row-header">Niche</td>
       <td onclick="window.open(&#39;https://www.niche.com/colleges/harvard-university&#39;)" class="jump">3</td>
@@ -334,7 +376,7 @@ tr:nth-child(odd) {
       <td onclick="window.open(&#39;https://www.niche.com/colleges/stanford-university&#39;)" class="jump">6</td>
       <td onclick="window.open(&#39;https://www.niche.com/colleges/massachusetts-institute-of-technology&#39;)" class="jump">10</td>
       <td onclick="window.open(&#39;https://www.usnews.com/best-colleges/cal-tech-1131&#39;)" class="jump">2</td>
-    </tr>
+    </tr-->
   	<tr>
       <td class="section-header" colspan="7" style="background-color:#00B9F4">INFORMATION SITES</td>
     </tr>
