@@ -1,3 +1,126 @@
-div {
-	font-family: calibri;
+table {
+ font-family: arial, sans-serif;
+ border-collapse: collapse;
+ }
+td,
+tr:nth-child(even) {
+ background-color: white;
 }
+tr:nth-child(odd) {
+ //background-color: #ddeedd;
+}
+.highlight {
+ background-color: Yellow;
+ color: Green;
+}
+
+
+
+.table-header-rotated {
+  border-collapse: collapse;
+}
+.csstransforms .table-header-rotated td {
+  width: 30px;
+}
+.no-csstransforms .table-header-rotated th {
+  padding: 5px 10px;
+}
+.table-header-rotated td {
+  text-align: center;
+  padding: 2px 2px;
+  border: 1px solid #ccc;
+  font-family: calibri;
+  //font-size:11px;
+}
+.csstransforms .table-header-rotated th.rotate {
+  height: 140px;
+  white-space: nowrap;
+  font-family: courier new;  
+  font-weight: bold;
+}
+.csstransforms .table-header-rotated th.rotate > div {
+  -webkit-transform: translate(25px, 51px) rotate(315deg);
+          transform: translate(23px, 53px) rotate(315deg);
+  width: 30px;  
+}
+.csstransforms .table-header-rotated th.rotate > div > span {
+  display: block;
+  text-align: left;
+  border-bottom: 1px solid #ccc;  
+  width: 250px;
+  padding: 2px 8px;
+  background-color: #ffffff;
+}
+.table-header-rotated td.row-header {
+  width: 220px;
+  padding: 0 12px;
+  border-bottom: 1px solid #ccc;
+  font-family: calibri;  
+  font-weight: bold;
+  white-space: nowrap;
+  text-align: left;
+}
+.table-header-rotated td.section-header {
+  padding: 0 6px;
+  border-bottom: 1px solid #00ECFF;
+  font-family: calibri;
+  font-weight: bold;
+  white-space: nowrap;
+  text-align: left;
+  background-color: #00ECFF
+}
+
+.table-header-rotated td.subrowheader {
+  padding: 0 30px;
+  border-bottom: 1px solid #eee;
+  font-family: calibri;  
+  white-space: nowrap;
+  text-align: left;
+  background-color: #eee
+} 
+
+  .expandable:hover {
+    cursor:pointer;
+  }
+  
+  .table-header-rotated tr.subrow-usnwr {
+    display: none;
+  }
+  .table-header-rotated tr.subrow-niche {
+    display: none;
+  }
+
+  
+/* Popup Menu Code From: https://css-tricks.com/snippets/jquery/styled-popup-menu/ */  
+  
+.size { position:relative }
+.size .field {
+	width:20px; background:transparent; color:transparent; padding:0px; border:none; cursor:pointer;
+	font-family:'lucida sans unicode',sans-serif; font-size:1em;
+	/*border:solid 0px #EC6603; */
+	/* -webkit-transition: all .4s ease-in-out; */
+	/* transition: all .4s ease-in-out; */
+}
+.size .field:hover {
+	border:solid 0px #fff;
+	-moz-box-shadow:0 0 0px #999; -webkit-box-shadow:0 0 0px #999; box-shadow:0 0 0px #999
+}
+.size>ul.list { display:none;
+	position:absolute; left:30px; top:-30px; z-index:999;
+	width:100px;
+	margin:0; padding:4px; list-style:none;
+	background:#fff; color:#333;
+	/* 
+  -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px;
+	-moz-box-shadow:0 0 5px #999; -webkit-box-shadow:0 0 5px #999; box-shadow:0 0 5px #999
+  */
+}
+.size>ul.list li {
+	padding:4px;
+	border-bottom: solid 1px #ccc;
+}
+.size>ul.list li:hover {
+	background:#EC6603; color:#fff;
+}
+.size>ul.list li:last-child { border:none }
+  
