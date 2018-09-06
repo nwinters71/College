@@ -83,15 +83,11 @@ tr:nth-child(odd) {
     cursor:pointer;
   }
   
-  .table-header-rotated tr.subrow-usnwrt tr.subrow-niche {
+  .sub-tr {
     display: none;
   }
  
-  .table-header-rotated tr.subrow-cappex {
-    display: none;
-  }
 
-  
 /* Popup Menu Code From: https://css-tricks.com/snippets/jquery/styled-popup-menu/ */  
   
 .size { position:relative }

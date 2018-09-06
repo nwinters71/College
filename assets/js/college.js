@@ -27,8 +27,12 @@ $(document).ready(function() {
       selectCell($(this));
   });
 
-  $('.sub-usnwr, .sub-niche, .sub-cappex').on("click", function() {
-      window.open($(this).attr("value") + $(this).parent().attr("value"));
+  $('.sub-usnwr, .sub-niche, .sub-cappex').on("click", function() {      
+      if ($(this).parent().attr("value").indexOf("^") != -1) {
+        window.open($(this).parent().attr("value").replace("^", $(this).attr("value")));
+      } else {
+        window.open($(this).attr("value") + $(this).parent().attr("value"));        
+      }
       selectCell($(this));
   });
 /*
@@ -84,9 +88,14 @@ function nicheToggle() {
   $(".niche-collapse").toggle();
 }
 function cappexToggle() {
-  $(".subrow-niche").toggle();
-  $(".niche-expand").toggle();
-  $(".niche-collapse").toggle();
+  $(".subrow-cappex").toggle();
+  $(".cappex-expand").toggle();
+  $(".cappex-collapse").toggle();
+}
+function collegeDataToggle() {
+  $(".subrow-collegeData").toggle();
+  $(".collegeData-expand").toggle();
+  $(".collegeData-collapse").toggle();
 }
   
   
