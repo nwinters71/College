@@ -27,13 +27,14 @@ $(document).ready(function() {
       selectCell($(this));
   });
 
-  $('.sub-usnwr, .sub-niche, .sub-cappex').on("click", function() {      
+  $('.jump').on("click", function() {
       if ($(this).parent().attr("value").indexOf("^") != -1) {
         window.open($(this).parent().attr("value").replace("^", $(this).attr("value")));
-      } else {
-        window.open($(this).attr("value") + $(this).parent().attr("value"));        
       }
-      selectCell($(this));
+    /* else {
+        window.open($(this).attr("value") + $(this).parent().attr("value"));        
+      }*/
+      // selectCell($(this));
   });
 /*
 $('.sub-niche').on("click", function() {
@@ -97,8 +98,36 @@ function collegeDataToggle() {
   $(".collegeData-expand").toggle();
   $(".collegeData-collapse").toggle();
 }
-  
-  
+function collegeSimplyToggle() {
+  $(".subrow-collegeSimply").toggle();
+  $(".collegeSimply-expand").toggle();
+  $(".collegeSimply-collapse").toggle();
+}
+function collegeRaptorToggle() {
+  $(".subrow-collegeRaptor").toggle();
+  $(".collegeRaptor-expand").toggle();
+  $(".collegeRaptor-collapse").toggle();
+}
+function noodleToggle() {
+  $(".subrow-noodle").toggle();
+  $(".noodle-expand").toggle();
+  $(".noodle-collapse").toggle();
+}
+function collegeXpressToggle() {
+  $(".subrow-collegeXpress").toggle();
+  $(".collegeXpress-expand").toggle();
+  $(".collegeXpress-collapse").toggle();
+}
+function campusExplorerToggle() {
+  $(".subrow-campusExplorer").toggle();
+  $(".campusExplorer-expand").toggle();
+  $(".campusExplorer-collapse").toggle();
+}
+function collegeFactualToggle() {
+  $(".subrow-collegeFactual").toggle();
+  $(".collegeFactual-expand").toggle();
+  $(".collegeFactual-collapse").toggle();
+}
 (function($) {
   $.fn.styleddropdown = function() {
     return this.each(function() {
