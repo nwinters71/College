@@ -83,10 +83,11 @@ tr:nth-child(odd) {
     cursor:pointer;
   }
   
-  .table-header-rotated tr.subrow-usnwr {
+  .table-header-rotated tr.subrow-usnwrt tr.subrow-niche {
     display: none;
   }
-  .table-header-rotated tr.subrow-niche {
+ 
+  .table-header-rotated tr.subrow-cappex {
     display: none;
   }
 

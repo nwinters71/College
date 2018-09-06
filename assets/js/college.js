@@ -1,8 +1,3 @@
-$(document).ready(function() {
-  $("#tblDatatr:has(.jump)").mouseover(function(e) {
-  $(this).css("cursor", "pointer");
-});
-
 /*
   $("#tblDatatr:has(td)").click(function(e) {
   $("#tblData td").removeClass("highlight");
@@ -12,6 +7,13 @@ $(document).ready(function() {
     'Clicked table cell value is: <b> ' + clickedCell.text() + '</b>');
   });
 */
+$(document).ready(function() {
+  //alert("Loaded!");
+  jsonTest();    
+  $("#tblDatatr:has(.jump)").mouseover(function(e) {
+    $(this).css("cursor", "pointer");   
+  });
+
   $('.size').styleddropdown();
   
   $('.usnwr').on("click", function() {
@@ -21,21 +23,26 @@ $(document).ready(function() {
   });
 
   $('.niche').on("click", function() {
-      //alert($(this).attr("value"));
       $('#nicheList').attr("baseurl", $(this).attr("value"));
       selectCell($(this));
   });
 
-  $('.sub-usnwr').on("click", function() {
+  $('.sub-usnwr, .sub-niche, .sub-cappex').on("click", function() {
+      window.open($(this).attr("value") + $(this).parent().attr("value"));
+      selectCell($(this));
+  });
+/*
+$('.sub-niche').on("click", function() {
       //alert($(this).attr("value"));
       window.open($(this).attr("value") + $(this).parent().attr("value"));
       selectCell($(this));
   });
-  $('.sub-niche').on("click", function() {
+  $('.sub-cappex').on("click", function() {
       //alert($(this).attr("value"));
       window.open($(this).attr("value") + $(this).parent().attr("value"));
       selectCell($(this));
   });
+*/
   
   $('.jump').on("mouseover", function() {
       highlightHeaders(this, "#FF4300", "120%");
@@ -48,9 +55,6 @@ $(document).ready(function() {
       this.style.backgroundColor='white';
   });
 
-  // onmouseover="this.style.backgroundColor=&#39;yellow&#39;" 
-  //onmouseout="this.style.backgroundColor=&#39;white&#39;; this.style.cursor=&#39;pointer&#39;"
- 
 });
 
 function highlightHeaders(TD, color, fs) {
@@ -65,8 +69,7 @@ function highlightHeaders(TD, color, fs) {
   rowHeader.css("color", color);  
   rowHeader.css("font-size", fs);
   colHeader.css("color", color);  
-  colHeader.css("font-size", fs);
-  
+  colHeader.css("font-size", fs);  
 }
   
   
@@ -80,49 +83,23 @@ function nicheToggle() {
   $(".niche-expand").toggle();
   $(".niche-collapse").toggle();
 }
+function cappexToggle() {
+  $(".subrow-niche").toggle();
+  $(".niche-expand").toggle();
+  $(".niche-collapse").toggle();
+}
   
   
 (function($) {
   $.fn.styleddropdown = function() {
     return this.each(function() {
-      var obj = $(this)
-      
-      // obj.click(selectCell(obj));
-      /*
-      obj.click(function() { //onclick event, 'list' fadein        
-  
-        obj.find('.list').fadeIn(00);
-
-        $(document).keyup(function(event) { //keypress event, fadeout on 'escape'
-          if(event.keyCode == 27) {
-            obj.find('.list').fadeOut(00);
-          }
-        });
-
-        obj.find('.list').hover(function(){ },
-        function() {
-          $(this).fadeOut(00);
-        });
-      }); */
-
-    obj.find('.list li').click(function() { //onclick event, change field value with selected 'list' item and fadeout 'list'
-      window.open($(this).parent().parent().attr("baseurl") + $(this).attr("value"));        
-/*
-        obj.find('.field')
-          .val($(this).html())
-          .css({
-            'background':'#fff',
-            'color':'#333'
-          });
-        obj.find('.list').fadeOut(00);
-*/
-    });
+      var obj = $(this)      
+      obj.find('.list li').click(function() { //onclick event, change field value with selected 'list' item and fadeout 'list'
+        window.open($(this).parent().parent().attr("baseurl") + $(this).attr("value"));        
+      });
     });
   };
 })(jQuery);
-  
-  
-
   
   
 function selectCell(TD) {
