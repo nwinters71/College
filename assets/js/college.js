@@ -28,13 +28,18 @@ $(document).ready(function() {
   });
 
   $('.jump').on("click", function() {
-      if ($(this).parent().attr("value").indexOf("^") != -1) {
-        window.open($(this).parent().attr("value").replace("^", $(this).attr("value")));
+      // $(this).css("background-color", "blue");
+    $("#explain").text('Hello World');
+      try {
+        if ($(this).parent().attr("value").indexOf("^") != -1) {
+          window.open($(this).parent().attr("value").replace("^", $(this).attr("value")));
+        }
+      } catch(err) {
+        window.open($(this).attr("value"));
       }
     /* else {
         window.open($(this).attr("value") + $(this).parent().attr("value"));        
-      }*/
-      // selectCell($(this));
+      }*/      
   });
 /*
 $('.sub-niche').on("click", function() {
@@ -50,7 +55,7 @@ $('.sub-niche').on("click", function() {
 */
   
   $('.jump').on("mouseover", function() {
-      highlightHeaders(this, "#FF4300", "120%");
+      highlightHeaders(this, "#FF4300", "100%");
       this.style.backgroundColor='#FF4300';
       this.style.cursor='pointer';
   });
@@ -77,57 +82,16 @@ function highlightHeaders(TD, color, fs) {
   colHeader.css("font-size", fs);  
 }
   
-  
-function usnwrToggle() {
-  $(".subrow-usnwr").toggle();
-  $(".usnwr-expand").toggle();
-  $(".usnwr-collapse").toggle();
+
+// Code to hide/show subrows for sections with subrows
+function sectionToggle(section) {
+  $(".subrow-" + section).toggle();
+  $("." + section + "-expand").toggle();
+  $("." + section + "-collapse").toggle();  
 }
-function nicheToggle() {
-  $(".subrow-niche").toggle();
-  $(".niche-expand").toggle();
-  $(".niche-collapse").toggle();
-}
-function cappexToggle() {
-  $(".subrow-cappex").toggle();
-  $(".cappex-expand").toggle();
-  $(".cappex-collapse").toggle();
-}
-function collegeDataToggle() {
-  $(".subrow-collegeData").toggle();
-  $(".collegeData-expand").toggle();
-  $(".collegeData-collapse").toggle();
-}
-function collegeSimplyToggle() {
-  $(".subrow-collegeSimply").toggle();
-  $(".collegeSimply-expand").toggle();
-  $(".collegeSimply-collapse").toggle();
-}
-function collegeRaptorToggle() {
-  $(".subrow-collegeRaptor").toggle();
-  $(".collegeRaptor-expand").toggle();
-  $(".collegeRaptor-collapse").toggle();
-}
-function noodleToggle() {
-  $(".subrow-noodle").toggle();
-  $(".noodle-expand").toggle();
-  $(".noodle-collapse").toggle();
-}
-function collegeXpressToggle() {
-  $(".subrow-collegeXpress").toggle();
-  $(".collegeXpress-expand").toggle();
-  $(".collegeXpress-collapse").toggle();
-}
-function campusExplorerToggle() {
-  $(".subrow-campusExplorer").toggle();
-  $(".campusExplorer-expand").toggle();
-  $(".campusExplorer-collapse").toggle();
-}
-function collegeFactualToggle() {
-  $(".subrow-collegeFactual").toggle();
-  $(".collegeFactual-expand").toggle();
-  $(".collegeFactual-collapse").toggle();
-}
+
+
+// Pop up menu code
 (function($) {
   $.fn.styleddropdown = function() {
     return this.each(function() {
@@ -137,21 +101,15 @@ function collegeFactualToggle() {
       });
     });
   };
-})(jQuery);
-  
+})(jQuery);  
   
 function selectCell(TD) {
-  //alert("Hello World");
-	//console.log(event.target);
-	// if( ! $(event.target).is('a') ) {
 		if(TD.hasClass("tdSiteSelected")) {		
 			TD.removeClass("tdSiteSelected");      
 			$("#usnwrList").hide();
-		} else {		
+		} else {
 			$(".tdSiteSelected").removeClass("tdSiteSelected");
 			TD.addClass("tdSiteSelected");
-			// $(".tdSiteSelected").html("#usnwrList");
-      // alert("Pos: " + TD.position().left);
       thisPos = TD.position();
       if(TD.hasClass("usnwr"))
         obj = $("#usnwrList");
@@ -170,20 +128,9 @@ function selectCell(TD) {
       obj.find('.list').hover(function(){ },
       function() {
         $(this).fadeOut(0);
-      });
-
-      
-      // window.open(obj.attr("baseurl") + $(this).attr("value"));
-      // window.open($('#usnwrList').attr("baseurl") + $(this).attr("value"));
-      // window.open(obj.attr("value") + $(this).attr("value"));
-
-      
+      });     
 			$("#usnwrList").show();
 		}
-	// } else {
-	//	window.open(event.target.href + "/administrator/index.cfm");
-	// }
 }
-  
-  
+
   

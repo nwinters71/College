@@ -1,3 +1,18 @@
+th.rotate2 {
+  text-align: left;
+  white-space: nowrap;
+  font-family: courier new;  
+  font-weight: bold;
+  -ms-transform: rotate(270deg); /* IE 9 */
+  -webkit-transform: rotate(270deg); /* Safari 3-8 */
+  transform: rotate(270deg);
+  -o-transform: rotate(270deg);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+  min-width: 40px;
+  height:250px;    
+}
+
+
 table {
  font-family: arial, sans-serif;
  border-collapse: collapse;
@@ -7,13 +22,12 @@ tr:nth-child(even) {
  background-color: white;
 }
 tr:nth-child(odd) {
- //background-color: #ddeedd;
+ background-color: #ddeedd;
 }
 .highlight {
  background-color: Yellow;
  color: Green;
 }
-
 
 
 .table-header-rotated {
@@ -30,7 +44,7 @@ tr:nth-child(odd) {
   padding: 2px 2px;
   border: 1px solid #ccc;
   font-family: calibri;
-  //font-size:11px;
+  /* font-size:11px; */
 }
 .csstransforms .table-header-rotated th.rotate {
   height: 140px;
@@ -38,21 +52,23 @@ tr:nth-child(odd) {
   font-family: courier new;  
   font-weight: bold;
 }
+/*
 .csstransforms .table-header-rotated th.rotate > div {
   -webkit-transform: translate(25px, 51px) rotate(315deg);
           transform: translate(23px, 53px) rotate(315deg);
   width: 30px;  
 }
+*/
 .csstransforms .table-header-rotated th.rotate > div > span {
   display: block;
   text-align: left;
   border-bottom: 1px solid #ccc;  
-  width: 250px;
+  /* width: 250px; */
   padding: 2px 8px;
   background-color: #ffffff;
 }
 .table-header-rotated td.row-header {
-  width: 220px;
+  /* width: 220px; */
   padding: 0 12px;
   border-bottom: 1px solid #ccc;
   font-family: calibri;  
@@ -87,6 +103,11 @@ tr:nth-child(odd) {
     display: none;
   }
  
+
+td, th {
+  border: 1px solid #ccc;
+}
+    
 
 /* Popup Menu Code From: https://css-tricks.com/snippets/jquery/styled-popup-menu/ */  
   

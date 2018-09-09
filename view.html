@@ -22,7 +22,28 @@
   <title>College Fast Pass</title>
   
 <style>
-    </style>
+{
+ margin-left: -87px;
+ position: absolute;
+ width: 215px;
+ transform: rotate(-90deg);
+ -webkit-transform: rotate(-90deg); /* Safari/Chrome */
+ -moz-transform: rotate(-90deg); /* Firefox */
+ -o-transform: rotate(-90deg); /* Opera */
+ -ms-transform: rotate(-90deg); /* IE 9 */
+  min-width:30px;
+  font-family:consolas
+}
+
+th.vertical
+{
+ height: 220px;
+ line-height: 14px;
+ padding-bottom: 20px;
+ text-align: left;
+  min-width:40px;
+}
+</style>
 
   <script>
   // window.console = window.console || function(t) {};
@@ -56,8 +77,7 @@
     <li value="/map">Map</li>
   </ul>
 </div>
-  
-  
+
 <div id="nicheList" class="size" baseurl="">
   <ul class="list">
     <li value="/#report-card">Report Card</li>
@@ -86,17 +106,17 @@
 	  <!-- th class="rotate"><div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div></th-->
 	  <th></th>
       <!-- Following headers are rotated -->
-		<th class="rotate"><div><span>Harvard University</span></div></th>
-		<th class="rotate"><div><span>Yale University</span></div></th>
-		<th class="rotate"><div><span>Princeton University</span></div></th>
-		<th class="rotate"><div><span>Stanford University</span></div></th>
-    <th class="rotate"><div><span>MIT</span></div></th>
-    <th class="rotate"><div><span>CalTech</span></div></th>
+		<th class="rotate2"><div><span>Harvard University</span></div></th>
+		<th class="rotate2"><div><span>Yale University</span></div></th>
+		<th class="rotate2"><div><span>Princeton University</span></div></th>
+		<th class="rotate2"><div><span>Stanford University</span></div></th>
+    <th class="rotate2"><div><span>MIT</span></div></th>
+    <th class="rotate2"><div><span>CalTech</span></div></th>
     </tr> 
   </thead>
   <tbody>
     <tr>
-      <td onclick="usnwrToggle()" class="row-header expandable">
+      <td onclick="sectionToggle('usnwr')" class="row-header expandable">
         <img class="usnwr-expand" src="assets/images/expand.jpg" alt="Expand" height="12" /> 
         <img class="usnwr-collapse" src="assets/images/collapse.jpg" alt="Collapse" height="12" style="display:none" />
         US News &amp; World Report
@@ -226,7 +246,7 @@
           <td class="jump" value="cal-tech-1131"></td>
         </tr>   
     <tr>
-      <td onclick="nicheToggle()" class="row-header expandable">
+      <td onclick="sectionToggle('niche')" class="row-header expandable">
         <img class="niche-expand" src="assets/images/expand.jpg" alt="Expand" height="12" /> 
         <img class="niche-collapse" src="assets/images/collapse.jpg" alt="Collapse" height="12" style="display:none" />
         Niche
@@ -356,7 +376,7 @@
         <td class="jump" value="california-institute-of-technology"></td>
     </tr>
     <tr>
-      <td onclick="cappexToggle()" class="row-header expandable">
+      <td onclick="sectionToggle('cappex')" class="row-header expandable">
         <img class="cappex-expand" src="assets/images/expand.jpg" alt="Expand" height="12" /> 
         <img class="cappex-collapse" src="assets/images/collapse.jpg" alt="Collapse" height="12" style="display:none" />
         Cappex
@@ -434,7 +454,7 @@
         <td class="jump" value="California-Institute-of-Technology"></td>
     </tr>
     <tr>
-      <td onclick="collegeDataToggle()" class="row-header expandable">
+      <td onclick="sectionToggle('collegeData')" class="row-header expandable">
         <img class="collegeData-expand" src="assets/images/expand.jpg" alt="Expand" height="12" /> 
         <img class="collegeData-collapse" src="assets/images/collapse.jpg" alt="Collapse" height="12" style="display:none" />
         College Data
@@ -502,7 +522,7 @@
     </tr>
     
     <tr>
-      <td onclick="collegeSimplyToggle()" class="row-header expandable">
+      <td onclick="sectionToggle('collegeSimply')" class="row-header expandable">
         <img class="collegeSimply-expand" src="assets/images/expand.jpg" alt="Expand" height="12" /> 
         <img class="collegeSimply-collapse" src="assets/images/collapse.jpg" alt="Collapse" height="12" style="display:none" />
         College Simply
@@ -580,7 +600,7 @@
         <td class="jump" value="california/california-institute-of-technology"></td>
     </tr>
     <tr>
-      <td onclick="collegeRaptorToggle()" class="row-header expandable">
+      <td onclick="sectionToggle('collegeRaptor')" class="row-header expandable">
         <img class="collegeRaptor-expand" src="assets/images/expand.jpg" alt="Expand" height="12" /> 
         <img class="collegeRaptor-collapse" src="assets/images/collapse.jpg" alt="Collapse" height="12" style="display:none" />
         College Raptor
@@ -677,7 +697,7 @@
     </tr>
 
     <tr>
-      <td onclick="collegeXpressToggle()" class="row-header expandable">
+      <td onclick="sectionToggle('collegeXpress')" class="row-header expandable">
         <img class="collegeXpress-expand" src="assets/images/expand.jpg" alt="Expand" height="12" /> 
         <img class="collegeXpress-collapse" src="assets/images/collapse.jpg" alt="Collapse" height="12" style="display:none" />
         CollegeXpress
@@ -793,7 +813,7 @@
 
     
     <tr>
-      <td onclick="campusExplorerToggle()" class="row-header expandable">
+      <td onclick="sectionToggle('campusExplorer')" class="row-header expandable">
         <img class="campusExplorer-expand" src="assets/images/expand.jpg" alt="Expand" height="12" /> 
         <img class="campusExplorer-collapse" src="assets/images/collapse.jpg" alt="Collapse" height="12" style="display:none" />
         Campus Explorer
@@ -871,7 +891,7 @@
     </tr>
 
     <tr>
-      <td onclick="collegeFactualToggle()" class="row-header expandable">
+      <td onclick="sectionToggle('collegeFactual')" class="row-header expandable">
         <img class="collegeFactual-expand" src="assets/images/expand.jpg" alt="Expand" height="12" /> 
         <img class="collegeFactual-collapse" src="assets/images/collapse.jpg" alt="Collapse" height="12" style="display:none" />
         College Factual
@@ -948,7 +968,7 @@
     </tr>
   
     <tr>
-      <td onclick="noodleToggle()" class="row-header expandable">
+      <td onclick="sectionToggle('noodle')" class="row-header expandable">
         <img class="noodle-expand" src="assets/images/expand.jpg" alt="Expand" height="12" /> 
         <img class="noodle-collapse" src="assets/images/collapse.jpg" alt="Collapse" height="12" style="display:none" />
         Noodle
@@ -1046,217 +1066,188 @@
     <tr>
       <td class="section-header" colspan="7">INFORMATION SITES</td>
     </tr>
-    <!-- tr>
-      <td class="row-header">Cappex</td>
-      <td onclick="window.open(&#39;https://www.cappex.com/colleges/Harvard-College&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://www.cappex.com/colleges/yale-university&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://www.cappex.com/colleges/princeton-university&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://www.cappex.com/colleges/stanford-university&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://www.cappex.com/colleges/Massachusetts-Institute-of-Technology&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://www.cappex.com/colleges/California-Institute-of-Technology/reviews&#39;)" class="jump"></td>
-    </tr -->
     <tr>
       <td class="row-header">Unigo</td>
-      <td onclick="window.open(&#39;https://www.unigo.com/colleges/harvard-university&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://www.unigo.com/colleges/yale-university&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://www.unigo.com/colleges/princeton-university&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://www.unigo.com/colleges/stanford-university&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://www.unigo.com/colleges/massachusetts-institute-of-technology&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://www.unigo.com/colleges/california-institute-of-technology&#39;)" class="jump"></td>
+      <td class="jump" value="https://www.unigo.com/colleges/harvard-university"></td>
+      <td class="jump" value="https://www.unigo.com/colleges/yale-university"></td>
+      <td class="jump" value="https://www.unigo.com/colleges/princeton-university"></td>
+      <td class="jump" value="https://www.unigo.com/colleges/stanford-university"></td>
+      <td class="jump" value="https://www.unigo.com/colleges/massachusetts-institute-of-technology"></td>
+      <td class="jump" value="https://www.unigo.com/colleges/california-institute-of-technology"></td>
     </tr>
     <tr>
       <td class="row-header">Chegg</td>
-      <td onclick="window.open(&#39;https://www.chegg.com/schools/harvard-university&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://www.chegg.com/schools/yaleuniversity&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://www.chegg.com/schools/princeton-university&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://www.chegg.com/schools/stanford-university&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://www.chegg.com/schools/massachusetts-institute-technology&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://www.chegg.com/schools/california-institute-technology-caltech&#39;)" class="jump"></td>
+      <td class="jump" value="https://www.chegg.com/schools/harvard-university"></td>
+      <td class="jump" value="https://www.chegg.com/schools/yaleuniversity"></td>
+      <td class="jump" value="https://www.chegg.com/schools/princeton-university"></td>
+      <td class="jump" value="https://www.chegg.com/schools/stanford-university"></td>
+      <td class="jump" value="https://www.chegg.com/schools/massachusetts-institute-technology"></td>
+      <td class="jump" value="https://www.chegg.com/schools/california-institute-technology-caltech"></td>
     </tr>
-    <!--
-    <tr>
-      <td class="row-header"></td>
-      <td onclick="window.open(&#39;&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;&#39;)" class="jump"></td>
-    </tr>
-  -->
   	<tr>
       <td class="section-header" colspan="7">DISCUSSION SITES</td>
     </tr>
     <tr>
       <td class="row-header">College Confidential</td>
-      <td onclick="window.open(&#39;https://talk.collegeconfidential.com/harvard-university/&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://talk.collegeconfidential.com/yale-university/&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://talk.collegeconfidential.com/princeton-university/&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://talk.collegeconfidential.com/stanford-university/&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://talk.collegeconfidential.com/massachusetts-institute-technology/&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://talk.collegeconfidential.com/california-institute-of-technology&#39;)" class="jump"></td>
+      <td class="jump" value="https://talk.collegeconfidential.com/harvard-university/"></td>
+      <td class="jump" value="https://talk.collegeconfidential.com/yale-university/"></td>
+      <td class="jump" value="https://talk.collegeconfidential.com/princeton-university/"></td>
+      <td class="jump" value="https://talk.collegeconfidential.com/stanford-university/"></td>
+      <td class="jump" value="https://talk.collegeconfidential.com/massachusetts-institute-technology/"></td>
+      <td class="jump" value="https://talk.collegeconfidential.com/california-institute-of-technology"></td>
     </tr>
     <tr>
       <td class="row-header">Reddit</td>
-      <td onclick="window.open(&#39;https://www.reddit.com/r/Harvard/&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://www.reddit.com/r/yale/&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://www.reddit.com/r/princeton/&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://www.reddit.com/r/stanford/&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://www.reddit.com/r/mit/&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://www.reddit.com/r/Caltech/&#39;)" class="jump"></td>
+      <td class="jump" value="https://www.reddit.com/r/Harvard/"></td>
+      <td class="jump" value="https://www.reddit.com/r/yale/"></td>
+      <td class="jump" value="https://www.reddit.com/r/princeton/"></td>
+      <td class="jump" value="https://www.reddit.com/r/stanford/"></td>
+      <td class="jump" value="https://www.reddit.com/r/mit/"></td>
+      <td class="jump" value="https://www.reddit.com/r/Caltech/"></td>
     </tr>
     <tr>
       <td class="row-header">Students Review</td>
-      <td onclick="window.open(&#39;http://www.studentsreview.com/MA/HU.html&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;http://www.studentsreview.com/CT/YU.html&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;http://www.studentsreview.com/NJ/PU.html&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;http://www.studentsreview.com/CA/STFU.html&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;http://www.studentsreview.com/MA/MIT_u.html&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;http://www.studentsreview.com/CA/California_Institute_of_Technology.html&#39;)" class="jump"></td>
+      <td class="jump" value="http://www.studentsreview.com/MA/HU.html"></td>
+      <td class="jump" value="http://www.studentsreview.com/CT/YU.html"></td>
+      <td class="jump" value="http://www.studentsreview.com/NJ/PU.html"></td>
+      <td class="jump" value="http://www.studentsreview.com/CA/STFU.html"></td>
+      <td class="jump" value="http://www.studentsreview.com/MA/MIT_u.html"></td>
+      <td class="jump" value="http://www.studentsreview.com/CA/California_Institute_of_Technology.html"></td>
     </tr>
     <tr>
       <td class="row-header">Rate My Professors</td>
-      <td onclick="window.open(&#39;http://www.ratemyprofessors.com/campusRatings.jsp?sid=399&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;http://www.ratemyprofessors.com/campusRatings.jsp?sid=1222&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;http://www.ratemyprofessors.com/campusRatings.jsp?sid=780&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;http://www.ratemyprofessors.com/campusRatings.jsp?sid=953&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;http://www.ratemyprofessors.com/campusRatings.jsp?sid=580&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;http://www.ratemyprofessors.com/campusRatings.jsp?sid=148&#39;)" class="jump"></td>
+      <td class="jump" value="http://www.ratemyprofessors.com/campusRatings.jsp?sid=399"></td>
+      <td class="jump" value="http://www.ratemyprofessors.com/campusRatings.jsp?sid=1222"></td>
+      <td class="jump" value="http://www.ratemyprofessors.com/campusRatings.jsp?sid=780"></td>
+      <td class="jump" value="http://www.ratemyprofessors.com/campusRatings.jsp?sid=953"></td>
+      <td class="jump" value="http://www.ratemyprofessors.com/campusRatings.jsp?sid=580"></td>
+      <td class="jump" value="http://www.ratemyprofessors.com/campusRatings.jsp?sid=148"></td>
     </tr>
   	<tr>
       <td class="section-header" colspan="7">SOCIAL MEDIA</td>
     </tr>
     <tr>
       <td class="row-header">Facebook</td>
-      <td onclick="window.open(&#39;https://www.facebook.com/Harvard/&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://www.facebook.com/YaleUniversity/&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://www.facebook.com/PrincetonU/&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://www.facebook.com/stanford/&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://www.facebook.com/MITnews/&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;http://www.facebook.com/californiainstituteoftechnology&#39;)" class="jump"></td>
+      <td class="jump" value="https://www.facebook.com/Harvard/"></td>
+      <td class="jump" value="https://www.facebook.com/YaleUniversity/"></td>
+      <td class="jump" value="https://www.facebook.com/PrincetonU/"></td>
+      <td class="jump" value="https://www.facebook.com/stanford/"></td>
+      <td class="jump" value="https://www.facebook.com/MITnews/"></td>
+      <td class="jump" value="http://www.facebook.com/californiainstituteoftechnology"></td>
     </tr>
     <tr>
       <td class="row-header">LinkedIn</td>
-      <td onclick="window.open(https://www.linkedin.com/school/harvard-university/&#39;&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://www.linkedin.com/school/yale-university/&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://www.linkedin.com/school/princeton-university/&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://www.linkedin.com/school/stanford-university/&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://www.linkedin.com/school/mit/&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://www.linkedin.com/school/california-institute-of-technology/&#39;)" class="jump"></td>
+      <td class="jump" onclick="window.open(https://www.linkedin.com/school/harvard-university/&#39;&#39;)"></td>
+      <td class="jump" value="https://www.linkedin.com/school/yale-university/"></td>
+      <td class="jump" value="https://www.linkedin.com/school/princeton-university/"></td>
+      <td class="jump" value="https://www.linkedin.com/school/stanford-university/"></td>
+      <td class="jump" value="https://www.linkedin.com/school/mit/"></td>
+      <td class="jump" value="https://www.linkedin.com/school/california-institute-of-technology/"></td>
     </tr>
     <tr>
       <td class="row-header">Twitter</td>
-      <td onclick="window.open(&#39;https://twitter.com/Harvard?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://twitter.com/Yale&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://twitter.com/Princeton&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://twitter.com/Stanford&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://twitter.com/MIT&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;http://www.twitter.com/caltech&#39;)" class="jump"></td>
+      <td class="jump" value="https://twitter.com/Harvard?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"></td>
+      <td class="jump" value="https://twitter.com/Yale"></td>
+      <td class="jump" value="https://twitter.com/Princeton"></td>
+      <td class="jump" value="https://twitter.com/Stanford"></td>
+      <td class="jump" value="https://twitter.com/MIT"></td>
+      <td class="jump" value="http://www.twitter.com/caltech"></td>
     </tr>
     <tr>
       <td class="row-header">YouTube</td>
-      <td onclick="window.open(&#39;https://www.youtube.com/user/Harvard/videos&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://www.youtube.com/user/YaleUniversity&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://www.youtube.com/user/princetonuniversity&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://www.youtube.com/channel/UC-EnprmCZ3OXyAoG7vjVNCA&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://www.youtube.com/mit&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;http://www.youtube.com/user/caltech&#39;)" class="jump"></td>
+      <td class="jump" value="https://www.youtube.com/user/Harvard/videos"></td>
+      <td class="jump" value="https://www.youtube.com/user/YaleUniversity"></td>
+      <td class="jump" value="https://www.youtube.com/user/princetonuniversity"></td>
+      <td class="jump" value="https://www.youtube.com/channel/UC-EnprmCZ3OXyAoG7vjVNCA"></td>
+      <td class="jump" value="https://www.youtube.com/mit"></td>
+      <td class="jump" value="http://www.youtube.com/user/caltech"></td>
     </tr>
     <tr>
       <td class="row-header">Instagram</td>
-      <td onclick="window.open(&#39;https://www.instagram.com/harvard/&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://www.instagram.com/yale/&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://www.instagram.com/princeton_university/&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;http://www.instagram.com/stanford&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://www.instagram.com/mitpics/&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;http://www.instagram.com/caltechedu&#39;)" class="jump"></td>
+      <td class="jump" value="https://www.instagram.com/harvard/"></td>
+      <td class="jump" value="https://www.instagram.com/yale/"></td>
+      <td class="jump" value="https://www.instagram.com/princeton_university/"></td>
+      <td class="jump" value="http://www.instagram.com/stanford"></td>
+      <td class="jump" value="https://www.instagram.com/mitpics/"></td>
+      <td class="jump" value="http://www.instagram.com/caltechedu"></td>
     </tr>
   	<tr>
       <td class="section-header" colspan="7">COLLEGE INFORMATION</td>
     </tr>
     <tr>
       <td class="row-header">Website</td>
-      <td onclick="window.open(&#39;https://www.harvard.edu/&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://www.yale.edu/&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://www.princeton.edu/&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://www.stanford.edu/&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;http://www.mit.edu/&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;http://www.caltech.edu&#39;)" class="jump"></td>
+      <td class="jump" value="https://www.harvard.edu/"></td>
+      <td class="jump" value="https://www.yale.edu/"></td>
+      <td class="jump" value="https://www.princeton.edu/"></td>
+      <td class="jump" value="https://www.stanford.edu/"></td>
+      <td class="jump" value="http://www.mit.edu/"></td>
+      <td class="jump" value="http://www.caltech.edu"></td>
     </tr>
     <tr>
       <td class="row-header">About</td>
-      <td onclick="window.open(&#39;https://college.harvard.edu/about&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://www.yale.edu/about-yale&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://www.princeton.edu/pub/profile/about/&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://www.stanford.edu/about/&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;http://web.mit.edu/about/&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;http://www.caltech.edu/content/about-caltech&#39;)" class="jump"></td>
+      <td class="jump" value="https://college.harvard.edu/about"></td>
+      <td class="jump" value="https://www.yale.edu/about-yale"></td>
+      <td class="jump" value="https://www.princeton.edu/pub/profile/about/"></td>
+      <td class="jump" value="https://www.stanford.edu/about/"></td>
+      <td class="jump" value="http://web.mit.edu/about/"></td>
+      <td class="jump" value="http://www.caltech.edu/content/about-caltech"></td>
     </tr>
-    <!-- <tr>
-      <td class="row-header"></td>
-      <td onclick="window.open(&#39;&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;&#39;)" class="jump"></td>
-    </tr> -->
     <tr>
       <td class="row-header">Wikipedia</td>
-      <td onclick="window.open(&#39;https://en.wikipedia.org/wiki/Harvard_University&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://en.wikipedia.org/wiki/Yale_University&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://en.wikipedia.org/wiki/Princeton_University&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://en.wikipedia.org/wiki/Stanford_University&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://en.wikipedia.org/wiki/Massachusetts_Institute_of_Technology&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://en.wikipedia.org/wiki/California_Institute_of_Technology&#39;)" class="jump"></td>
+      <td class="jump" value="https://en.wikipedia.org/wiki/Harvard_University"></td>
+      <td class="jump" value="https://en.wikipedia.org/wiki/Yale_University"></td>
+      <td class="jump" value="https://en.wikipedia.org/wiki/Princeton_University"></td>
+      <td class="jump" value="https://en.wikipedia.org/wiki/Stanford_University"></td>
+      <td class="jump" value="https://en.wikipedia.org/wiki/Massachusetts_Institute_of_Technology"></td>
+      <td class="jump" value="https://en.wikipedia.org/wiki/California_Institute_of_Technology"></td>
     </tr>
     <tr>
       <td class="row-header">Virtual Tour</td>
-      <td onclick="window.open(&#39;https://college.harvard.edu/admissions/visit/virtual-tour&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://admissions.yale.edu/virtual-tour&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://www.youvisit.com/tour/princeton&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://visit.stanford.edu/tours/virtual/&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;http://web.mit.edu/vrtour/&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;http://www.admissions.caltech.edu/videotour&#39;)" class="jump"></td>
+      <td class="jump" value="https://college.harvard.edu/admissions/visit/virtual-tour"></td>
+      <td class="jump" value="https://admissions.yale.edu/virtual-tour"></td>
+      <td class="jump" value="https://www.youvisit.com/tour/princeton"></td>
+      <td class="jump" value="https://visit.stanford.edu/tours/virtual/"></td>
+      <td class="jump" value="http://web.mit.edu/vrtour/"></td>
+      <td class="jump" value="http://www.admissions.caltech.edu/videotour"></td>
     </tr>
     <tr>
       <td class="row-header">Campus Map</td>
-      <td onclick="window.open(&#39;https://map.harvard.edu/&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://map.yale.edu/&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;http://m.princeton.edu/map/campus&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://campus-map.stanford.edu/&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://whereis.mit.edu/&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;http://www.caltech.edu/content/campus-maps&#39;)" class="jump"></td>
+      <td class="jump" value="https://map.harvard.edu/"></td>
+      <td class="jump" value="https://map.yale.edu/"></td>
+      <td class="jump" value="http://m.princeton.edu/map/campus"></td>
+      <td class="jump" value="https://campus-map.stanford.edu/"></td>
+      <td class="jump" value="https://whereis.mit.edu/"></td>
+      <td class="jump" value="http://www.caltech.edu/content/campus-maps"></td>
     </tr>
   	<tr>
       <td class="section-header" colspan="7">NEWS</td>
     </tr>
     <tr>
       <td class="row-header">News</td>
-      <td onclick="window.open(&#39;https://news.harvard.edu/gazette/&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://news.yale.edu/&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://www.princeton.edu/news&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://news.stanford.edu/&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;http://news.mit.edu/&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;http://www.caltech.edu/today&#39;)" class="jump"></td>
+      <td class="jump" value="https://news.harvard.edu/gazette/"></td>
+      <td class="jump" value="https://news.yale.edu/"></td>
+      <td class="jump" value="https://www.princeton.edu/news"></td>
+      <td class="jump" value="https://news.stanford.edu/"></td>
+      <td class="jump" value="http://news.mit.edu/"></td>
+      <td class="jump" value="http://www.caltech.edu/today"></td>
     </tr>
     <tr>
       <td class="row-header">Newspaper</td>
-      <td onclick="window.open(&#39;https://www.thecrimson.com/&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://yaledailynews.com/&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;http://www.dailyprincetonian.com/&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://www.stanforddaily.com/&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;http://tech.mit.edu/&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;http://www.tech.caltech.edu/&#39;)" class="jump"></td>
+      <td class="jump" value="https://www.thecrimson.com/"></td>
+      <td class="jump" value="https://yaledailynews.com/"></td>
+      <td class="jump" value="http://www.dailyprincetonian.com/"></td>
+      <td class="jump" value="https://www.stanforddaily.com/"></td>
+      <td class="jump" value="http://thetech.com/"></td>
+      <td class="jump" value="http://www.tech.caltech.edu/"></td>
     </tr>
     <tr>
       <td class="row-header">Magazine</td>
-      <td onclick="window.open(&#39;https://www.harvardmagazine.com/&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://yaledailynews.com/blog/category/mag/&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;http://www.princetonmagazine.com/&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://alumni.stanford.edu/get/page/magazine/home&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://www.technologyreview.com/&#39;)" class="jump"></td>
-      <td onclick="window.open(&#39;https://magazine.caltech.edu/&#39;)" class="jump"></td>
+      <td class="jump" value="https://www.harvardmagazine.com/"></td>
+      <td class="jump" value="https://yaledailynews.com/blog/category/mag/"></td>
+      <td class="jump" value="http://www.princetonmagazine.com/"></td>
+      <td class="jump" value="https://alumni.stanford.edu/get/page/magazine/home"></td>
+      <td class="jump" value="https://www.technologyreview.com/"></td>
+      <td class="jump" value="https://magazine.caltech.edu/"></td>
     </tr>
   </tbody>
 </table>
