@@ -13,7 +13,7 @@ div.vertical {
 }
 
 th.vertical {
-  height: 220px;
+  height: 260px;
   line-height: 14px;
   padding-bottom: 20px;
   text-align: left;
@@ -140,6 +140,7 @@ tr:nth-child(odd) {
 
 td, th {
   border: 1px solid #ccc;
+  height: 30px;  
 }
     
 

@@ -55,14 +55,17 @@ $('.sub-niche').on("click", function() {
 */
   
   $('.jump').on("mouseover", function() {
-      highlightHeaders(this, "#FF4300", "100%");
-      this.style.backgroundColor='#FF4300';
+      highlightHeaders(this, "#FF9933", "100%");
+      this.style.backgroundColor='#FF9933';
       this.style.cursor='pointer';
+      this.style.cursor='pointer';
+      $("img", this).attr("src", "./assets/images/external.svg");
   });
 
   $('.jump').on("mouseout", function() {
-      highlightHeaders(this, "black", "100%");    
+      highlightHeaders(this, "black", "100%");
       this.style.backgroundColor='white';
+      $("img", this).attr("src", "./assets/images/space.png");
   });
 
 });
