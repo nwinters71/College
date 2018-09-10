@@ -29,13 +29,15 @@ $(document).ready(function() {
 
   $('.jump').on("click", function() {
       // $(this).css("background-color", "blue");
-    $("#explain").text('Hello World');
-      try {
-        if ($(this).parent().attr("value").indexOf("^") != -1) {
-          window.open($(this).parent().attr("value").replace("^", $(this).attr("value")));
+    // $("#explain").text('Hello World');
+      if($(this).hasClass("premium") === false) {
+        try {
+          if ($(this).parent().attr("value").indexOf("^") != -1) {
+            window.open($(this).parent().attr("value").replace("^", $(this).attr("value")));
+          }
+        } catch(err) {
+          window.open($(this).attr("value"));
         }
-      } catch(err) {
-        window.open($(this).attr("value"));
       }
     /* else {
         window.open($(this).attr("value") + $(this).parent().attr("value"));        
@@ -55,17 +57,23 @@ $('.sub-niche').on("click", function() {
 */
   
   $('.jump').on("mouseover", function() {
-      highlightHeaders(this, "#FF9933", "100%");
-      this.style.backgroundColor='#FF9933';
-      this.style.cursor='pointer';
-      this.style.cursor='pointer';
-      $("img", this).attr("src", "./assets/images/external.svg");
+      if($(this).hasClass("premium")) {
+        $("img", this).attr("src", "./assets/images/lock2.png");  
+        highlightHeaders(this, "#9d9", "100%");
+        this.style.backgroundColor='#9d9';
+      } else {
+        highlightHeaders(this, "#FF9933", "100%");
+        this.style.backgroundColor='#FF9933';
+        this.style.cursor='pointer';
+        this.style.cursor='pointer';
+        $("img", this).attr("src", "./assets/images/external.svg");
+      }      
   });
 
   $('.jump').on("mouseout", function() {
       highlightHeaders(this, "black", "100%");
       this.style.backgroundColor='white';
-      $("img", this).attr("src", "./assets/images/space.png");
+      $("img", this).attr("src", "./assets/images/space.png");      
   });
 
 });
