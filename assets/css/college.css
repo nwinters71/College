@@ -1,3 +1,37 @@
+div.vertical {
+  margin-left: -87px;
+  position: absolute;
+  width: 215px;
+  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg); /* Safari/Chrome */
+  -moz-transform: rotate(-90deg); /* Firefox */
+  -o-transform: rotate(-90deg); /* Opera */
+  -ms-transform: rotate(-90deg); /* IE 9 */
+  min-width:30px;
+  font-family:consolas
+  background-color:#ddd;
+}
+
+th.vertical {
+  height: 220px;
+  line-height: 14px;
+  padding-bottom: 20px;
+  text-align: left;
+  min-width:40px;
+  padding-bottom:128px;
+  background-color:#ddd;
+}
+.shopping {
+  padding: 0 6px;
+  border-bottom: 1px solid #00ECFF;
+  font-weight: bold;
+  font-family: calibri;
+  white-space: nowrap;
+  text-align: left;
+  background-color: yellow;
+}
+
+
 th.rotate2 {
   text-align: left;
   white-space: nowrap;
