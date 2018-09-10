@@ -67,7 +67,7 @@ $('.sub-niche').on("click", function() {
         this.style.cursor='pointer';
         this.style.cursor='pointer';
         $("img", this).attr("src", "./assets/images/external.svg");
-      }      
+      }
   });
 
   $('.jump').on("mouseout", function() {
@@ -84,13 +84,14 @@ function highlightHeaders(TD, color, fs) {
   var children = tr.children().length;
   var tdIndex = td.index();
   var trIndex = tr.index()+1;
-  var table = $("#jumpTable")[0];      
-  var rowHeader = $(table.rows[0].cells[tdIndex]);
-  var colHeader = $(table.rows[trIndex].cells[0]);
+  var table = $("#jumpTable")[0];
+  var rowHeader = $(table.rows[trIndex].cells[0]);
+  var colHeader = $(table.rows[0].cells[tdIndex]);
   rowHeader.css("color", color);  
   rowHeader.css("font-size", fs);
-  colHeader.css("color", color);  
+  colHeader.css("color", color);
   colHeader.css("font-size", fs);  
+  $("#side-title").text(rowHeader.text());
 }
   
 

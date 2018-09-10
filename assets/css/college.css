@@ -8,8 +8,8 @@ div.vertical {
   -o-transform: rotate(-90deg); /* Opera */
   -ms-transform: rotate(-90deg); /* IE 9 */
   min-width:30px;
-  font-family:consolas
-  background-color:#ddd;
+  font-family:consolas,arial;
+  background-color:#eee;
 }
 
 th.vertical {
@@ -19,8 +19,21 @@ th.vertical {
   text-align: left;
   min-width:40px;
   padding-bottom:128px;
-  background-color:#ddd;
+  background-color:#eee;
 }
+
+#rightsidenav {  
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 300px; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 40; /* Stay at the top */
+    left: 840px;
+    background-color: #eee; /* Black */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+}
+
 .shopping {
   padding: 0 6px;
   border-bottom: 1px solid #00ECFF;
