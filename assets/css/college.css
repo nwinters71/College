@@ -12,7 +12,7 @@ div.vertical {
   background-color:#eee;
 }
 #twTimeline {
-  max-height:300px;
+  max-height:240px;
 }
 th.vertical {
   height: 260px;
@@ -127,12 +127,12 @@ tr:nth-child(odd) {
 }
 .table-header-rotated td.section-header {
   padding: 0 6px;
-  border-bottom: 1px solid #00ECFF;
+  border-bottom: 1px solid #ccc;
   font-family: calibri;
   font-weight: bold;
   white-space: nowrap;
   text-align: left;
-  background-color: #00ECFF
+  background-color: #abe
 }
 
 .table-header-rotated td.subrowheader {
