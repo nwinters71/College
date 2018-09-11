@@ -7,6 +7,7 @@
     'Clicked table cell value is: <b> ' + clickedCell.text() + '</b>');
   });
 */
+currTwitter = "Yale";
 $(document).ready(function() {
   //alert("Loaded!");
   jsonTest();    
@@ -84,14 +85,24 @@ function highlightHeaders(TD, color, fs) {
   var children = tr.children().length;
   var tdIndex = td.index();
   var trIndex = tr.index()+1;
-  var table = $("#jumpTable")[0];
+  var table = $("#jumpTable")[0];  
   var rowHeader = $(table.rows[trIndex].cells[0]);
   var colHeader = $(table.rows[0].cells[tdIndex]);
   rowHeader.css("color", color);  
   rowHeader.css("font-size", fs);
   colHeader.css("color", color);
   colHeader.css("font-size", fs);  
-  $("#side-title").text(rowHeader.text());
+  $("#side-title").text(colHeader.text());
+  /*
+  if (currTwitter != $(table.rows[104].cells[tdIndex]).attr("value")) {
+    currTwitter = $(table.rows[104].cells[tdIndex]).attr("value");
+    $("#twTimeline").html(`<a class="twitter-timeline" href="` + currTwitter + `">Tweets</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>`);    
+  }
+  */
+  //console.log("Check1: (" + colHeader.text() +  ") " + $("#twitterTimeline").attr("href"));
+  //console.log($("#twTimeline").children().attr("alt"));
+  
+  // console.log("Twitter updated?:" + $("#twTimeline").attr("href"));
 }
   
 
