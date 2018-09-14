@@ -142,7 +142,7 @@ th.rotate2 {
   background-color: #abe
 }
 
-.table-header-rotated td.subrowheader {
+#jumpTable td.subrowheader {
   padding: 0 30px;
   border-bottom: 1px solid #eee;
   font-family: calibri;  
