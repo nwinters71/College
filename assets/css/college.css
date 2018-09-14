@@ -132,7 +132,7 @@ th.rotate2 {
   white-space: nowrap;
   text-align: left;
 }
-.table-header-rotated td.section-header {
+#jumpTable td.section-header {
   padding: 0 6px;
   border-bottom: 1px solid #ccc;
   font-family: calibri;
