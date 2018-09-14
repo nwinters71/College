@@ -27,13 +27,17 @@ th.vertical {
 #rightsidenav {  
     height: 100%; /* Full-height: remove this if you want "auto" height */
     width: 300px; /* Set the width of the sidebar */
-    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    position: relative; /* Fixed Sidebar (stay in place on scroll) */
     z-index: 1; /* Stay on top */
     top: 40; /* Stay at the top */
-    left: 840px;
+    left: 20px;
     background-color: #eee; /* Black */
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 20px;
+}
+
+.jump img {
+  height:16px;
 }
 
 .shopping {
@@ -61,16 +65,19 @@ th.rotate2 {
   height:250px;    
 }
 
+.browse {
+  
+}
 
-table {
+#jumpTable table {
  font-family: arial, sans-serif;
  border-collapse: collapse;
  }
-td,
-tr:nth-child(even) {
+#jumpTable td,
+#jumpTable tr:nth-child(even) {
  background-color: white;
 }
-tr:nth-child(odd) {
+#jumpTable tr:nth-child(odd) {
  background-color: #ddeedd;
 }
 .highlight {
@@ -153,7 +160,7 @@ tr:nth-child(odd) {
   }
  
 
-td, th {
+#jumpTable td, th {
   border: 1px solid #ccc;
   height: 30px;  
 }

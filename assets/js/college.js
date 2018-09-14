@@ -10,7 +10,8 @@
 currTwitter = "Yale";
 $(document).ready(function() {
   //alert("Loaded!");
-  jsonTest();    
+  //jsonTest();
+  colleges = jsonColleges();
   $("#tblDatatr:has(.jump)").mouseover(function(e) {
     $(this).css("cursor", "pointer");   
   });
@@ -57,6 +58,17 @@ $('.sub-niche').on("click", function() {
   });
 */
   
+  $('.browse').on("mouseover", function() {
+      this.style.backgroundColor='yellow';
+      this.style.cursor='pointer';
+      // $("img", this).attr("src", "./assets/images/external.svg");
+  });
+  $('.browse').on("mouseout", function() {
+      this.style.backgroundColor='white';
+      this.style.cursor='cursor';
+      // $("img", this).attr("src", "./assets/images/external.svg");
+  });
+
   $('.jump').on("mouseover", function() {
       if($(this).hasClass("premium")) {
         $("img", this).attr("src", "./assets/images/lock2.png");  
@@ -65,7 +77,6 @@ $('.sub-niche').on("click", function() {
       } else {
         highlightHeaders(this, "#FF9933", "100%");
         this.style.backgroundColor='#FF9933';
-        this.style.cursor='pointer';
         this.style.cursor='pointer';
         $("img", this).attr("src", "./assets/images/external.svg");
       }
@@ -76,6 +87,8 @@ $('.sub-niche').on("click", function() {
       this.style.backgroundColor='white';
       $("img", this).attr("src", "./assets/images/space.png");      
   });
+  
+  console.log(colleges);
 
 });
 
@@ -83,16 +96,24 @@ function highlightHeaders(TD, color, fs) {
   var td = $(TD);
   var tr = td.parent();
   var children = tr.children().length;
-  var tdIndex = td.index();
-  var trIndex = tr.index()+1;
+  var tdIndex = td.index()-1;
+  var trIndex = tr.index()+2;
   var table = $("#jumpTable")[0];  
   var rowHeader = $(table.rows[trIndex].cells[0]);
-  var colHeader = $(table.rows[0].cells[tdIndex]);
+  var colHeader = $(table.rows[1].cells[tdIndex]);
   rowHeader.css("color", color);  
   rowHeader.css("font-size", fs);
   colHeader.css("color", color);
   colHeader.css("font-size", fs);  
-  $("#side-title").text(colHeader.text());
+  $("#side-image").attr("src", "./assets/images/school/" + colleges[tdIndex].image);
+  $("#side-title").text(colleges[tdIndex].name);
+  $("#side-logo").attr("src", colleges[tdIndex].logo);
+  $("#side-address").attr("href", 'https://maps.google.com/?q=' + colleges[tdIndex].address);
+  $("#side-address").html(colleges[tdIndex].address);
+  $("#side-phone").text(colleges[tdIndex].phone);
+  // $("#side-map").attr("src", 'https://www.google.com/maps/embed/v1/place?key=Wt2NglZQFHLG4POYCFzNxOE4ANVUqyJT&q=' + colleges[tdIndex].address);
+
+  
   /*
   if (currTwitter != $(table.rows[104].cells[tdIndex]).attr("value")) {
     currTwitter = $(table.rows[104].cells[tdIndex]).attr("value");
